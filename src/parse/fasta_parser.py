@@ -1,7 +1,7 @@
 
 """
 Extract:
-- Sequence ID
+- Sequence ID 
 -Description (gene Name)
 -Sequence
 -Length of sequence
@@ -17,6 +17,16 @@ Extract:
 """
 
 from Bio import SeqIO
-BRCA1_transcript = "/Users/alittle23/Documents/Personal Projects/Genomics-Data-Parser/data/BRCA1_refseq_transcript.fasta"
-for record in SeqIO.parse(BRCA1_transcript,"fasta"):
-    print(record.id)
+from collections import defaultdict
+import re
+
+gene_dict= dict(list)
+
+
+
+reversedTranscript_RNA = "/Users/alittle23/Documents/Personal Projects/Genomics-Data-Parser/data/human.1.rna.fna"
+for record in SeqIO.parse(reversedTranscript_RNA,"fasta"):
+
+
+    print(record)
+    print("seq length:",len(record.seq))
